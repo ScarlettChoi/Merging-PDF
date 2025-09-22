@@ -2,3 +2,4 @@
 *.spec
 work_path/
 Build*/
+__pycache__/
