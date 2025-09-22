@@ -9,7 +9,7 @@ import win32com.client
 def send_email(subject="", att=""):
     outlook=win32com.client.Dispatch("Outlook.Application")
     Txoutlook = outlook.CreateItem(0)
-    Txoutlook.To = "vfsk.it@volvo.com" 
+    Txoutlook.To = "" 
     Txoutlook.Subject = subject
     Txoutlook.BodyFormat = 1 
     Txoutlook.Body = subject

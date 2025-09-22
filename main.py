@@ -3,6 +3,10 @@ import PyPDF2
 from datetime import datetime
 import win32com.client
 import pythoncom
+from config import *
+
+pathfile='setting.properties'
+name,email=loadvar(pathfile)
 
 def merge_pdfs(folder_path, output_path):
     merger = PyPDF2.PdfMerger()
@@ -54,15 +58,15 @@ if __name__ == "__main__":
     if email_yn=="Y":
         email_address=input("Please type email address (Press Enter : vfskvat@volvo.com):")
         if email_address=="":
-            email_address='seonyoung.choi@volvo.com'
+            email_address=email
         print(f"Email address : {email_address}")
     elif email_yn=="N":
         pass
     else :
         print("Type Y/N in uppercase letter. Try again")
         exit()
-    output_path = f'{folder_path}/{file_type}SY_CHOI_{today}.pdf'
-    email_subject=f'{file_type}SY_CHOI_{today}'
+    output_path = f'{folder_path}/{file_type}{name}_{today}.pdf'
+    email_subject=f'{file_type}{name}_{today}'
     merge_pdfs(folder_path, output_path)
     print(f'Merged PDF saved as {output_path}')
     if email_yn=="Y":
