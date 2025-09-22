@@ -1,0 +1,5 @@
+*.pdf
+*.spec
+work_path/
+distribute/
+Build*/
