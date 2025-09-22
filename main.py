@@ -1,5 +1,5 @@
 import os
-import PyPDF2
+import pypdf
 from datetime import datetime
 import win32com.client
 import pythoncom
@@ -9,7 +9,7 @@ pathfile='setting.properties'
 name,email=loadvar(pathfile)
 
 def merge_pdfs(folder_path, output_path):
-    merger = PyPDF2.PdfMerger()
+    merger = pypdf.PdfWriter()
     for root, _, files in os.walk(folder_path):
         pdf_files = [os.path.join(root, file) for file in files if file.lower().endswith('.pdf')]
         for pdf in sorted(pdf_files):

@@ -2,7 +2,7 @@ import argparse
 from glob import glob
 import os
 import datetime
-import PyPDF2
+import pypdf
 import win32com.client
  
 
@@ -35,7 +35,7 @@ def main(type="1", name="", directory=".", remarks=""):
         
         
     
-    merger = PyPDF2.PdfMerger()
+    merger = pypdf.pdfwriter()
 
     for f in glob(f"{directory}/*.pdf"):
         merger.append(f)
